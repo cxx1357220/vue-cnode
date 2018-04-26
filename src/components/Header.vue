@@ -25,12 +25,14 @@
             },
         },
         computed: {  
-            listenheaderTitle() {  
-                return this.$store.state.headerTitle;  
+            listenTitle: {  
+                get: function () {
+                    return this.$store.state.headerTitle;
+                }              
             }  
         },  
         watch: {  
-            listenheaderTitle: function(a, b) {  
+            listenTitle: function(a,b) {  
                 this.headerTitle=a;  //监听变化
             }  
         }, 
