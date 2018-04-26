@@ -16,7 +16,7 @@ npm run dev
 
 #### 引入vuex和axios
 ```bash
-npm install vuex --save <br>
+npm install vuex --save 
 npm install axios -S
 ```
 
