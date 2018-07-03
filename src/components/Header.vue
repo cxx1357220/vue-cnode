@@ -1,6 +1,6 @@
 <template>
-    <div class="Header">
-    <span style='justify-content:left;'>
+    <div class="header">
+    <span>
         <span class="menu" @click='handleClick()'></span>
         <span class="title">{{headerTitle}}</span>
     </span>
@@ -10,7 +10,7 @@
 <script>
     import store from '../vuex/store.js' 
     export default {
-        name: "Header",
+        name: "header",
         data() {
             return {
                 headerTitle:store.state.headerTitle,
@@ -18,7 +18,7 @@
         },
         methods: {
             handleClick(){
-                this.$store.dispatch('change_headerTitle', '作者列表'); 
+                this.$store.dispatch('changeHeaderTitle', '作者列表'); 
                 this.$router.push({
                     name:'home'
                 });
@@ -53,11 +53,12 @@
         font-family: apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang-SC-Regular, STHeiti, Helvetica, Arial, Verdana, "sans-serif", Microsoft YaHei;
         font-weight: 200;
     }
-    .Header {
+    .header {
         height: 70px;
         line-height:70px;
         width: 100%;
         background-color: #000000;
+        display: flex;
         justify-content: flex-start;
         flex-basis: 70px;
         flex-shrink: 0;
@@ -68,7 +69,7 @@
     .color{
         background-color: #00a2ea;        
     }
-    .Header .menu {
+    .header .menu {
         margin:0 60px;
         height: 16px;
         width: 20px;
@@ -77,14 +78,20 @@
         border-width: 2px 0;
         cursor: pointer;
     }
-    .Header .menu:before {
+    .header .menu:before {
         content: "";
         width: 20px;
         height: 2px;
         background-color: #fff;
     }
-    .Header span{
+    .header span{
         color: #fff;
+    }
+    /*
+    
+    */
+    .header>span{
+        justify-content:left;
     }
     .title{
         white-space: nowrap;

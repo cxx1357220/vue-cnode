@@ -1,12 +1,12 @@
 
 <template>
     <div class="index">
-        <Header></Header>
+        <viewHeader></viewHeader>
         <router-view></router-view>
     </div>
 </template>
 <script>
-    import Header from '../components/Header.vue'
+    import header from '../components/header.vue'
     export default {
         name: 'index',
         data() {
@@ -14,7 +14,7 @@
             }
         },
         components: {
-            Header,
+            viewHeader:header,
         },
 
     }

@@ -20,17 +20,17 @@
             }
         },
         mounted() {
-            this.get_author_all()
+            this.getAuthorAll()
         },
         methods: {
-            handleClick(recent_topics,name){
-                this.$store.commit('change_articleTitle', recent_topics); 
-                this.$store.dispatch('change_headerTitle', name); 
+            handleClick(recentTopics,name){
+                this.$store.commit('changeArticleTitle', recentTopics); 
+                this.$store.dispatch('changeHeaderTitle', name); 
                 this.$router.push({
                     path:'detail',
                 });
             },
-            get_author_list(id){
+            getAuthorList(id){
                 return new Promise((reject,resolve) => {
                     if(this.titleList==''){
                     axios.get('/api/user/'+id)
@@ -43,10 +43,10 @@
                     }
                 });
             },
-            get_author_all(){
-                return Promise.all(store.state.arr_id.map(x=>this.get_author_list(x))).then((response)=>{
+            getAuthorAll(){
+                return Promise.all(store.state.arrId.map(x=>this.getAuthorList(x))).then((response)=>{
                     this.titleList=response;
-                    this.$store.commit('change_titleList', response);  
+                    this.$store.commit('changeTitleList', response);  
                     console.log(this.$store.state.titleList); 
                 })
                 .catch((error) => {

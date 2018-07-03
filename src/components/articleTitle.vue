@@ -29,7 +29,7 @@
             //    this.titleList=titleList.reverse();
             //},
             handleClick(id,title){
-                this.$store.dispatch('change_headerTitle', '文章内容'); 
+                this.$store.dispatch('changeHeaderTitle', '文章内容'); 
                 this.$router.push({
                     path:'article',
                     query: { id:  id}

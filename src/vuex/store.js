@@ -7,26 +7,26 @@ const state = {
   titleList:'',
   articleTitle:'',
   headerTitle: '作者列表',
-  arr_id:['JacksonTian','imzengyang','JZLeung','vanishcode','chuanzai','huanz','zhangshiqiu','i5ting','Hyurl','D8Ge','spursy','wangchaoduo','JerrysShan','FrankDiao','heguangda','ITCNZ','yuu2lee4'],
+  arrId:['JacksonTian','imzengyang','JZLeung','vanishcode','chuanzai','huanz','zhangshiqiu','i5ting','Hyurl','D8Ge','spursy','wangchaoduo','JerrysShan','FrankDiao','heguangda','ITCNZ','yuu2lee4'],
 }
 // 创建改变状态的方法
 const mutations = {
-    change_titleList (state, n) {
+    changeTitleList (state, n) {
       if(state.titleList==''){
         state.titleList = n        
       }
     },
-    change_articleTitle (state, n) {
+    changeArticleTitle (state, n) {
         state.articleTitle = n
     },
-    change_headerTitle (state, n) {
+    changeHeaderTitle (state, n) {
       Vue.set(state, 'headerTitle', n)
     }
 }
 // 创建驱动actions可以使得mutations得以启动
 const actions = {
-  change_headerTitle (context, n) {
-    context.commit('change_headerTitle', n)
+  changeHeaderTitle (context, n) {
+    context.commit('changeHeaderTitle', n)
   }
 }
 export default new Vuex.Store({

@@ -1,6 +1,6 @@
 <template>
-    <div class="Article">
-        <div>{{article_title}}</div>
+    <div class="articleAndReply">
+        <div>{{articleTitle}}</div>
         <div v-html="article"></div>
             <div style='background-color:#099999'>回复：</div>
             <div class="bor" v-for="title in replies">
@@ -12,21 +12,21 @@
 <script>
     import axios from 'axios'
     export default {
-        name: 'Article',
+        name: 'articleAndReply',
         data() {
             return {
                 article:'',
-                article_title:'',
+                articleTitle:'',
                 replies:'',
             }
         },
         components: {
         },
         mounted() {
-            this.get_article(this.$route.query.id)
+            this.getArticle(this.$route.query.id)
         },
         methods:{
-            get_article(id){
+            getArticle(id){
                 axios.get('/api/topic/'+id)
                     .then((response) => {
                         console.log(response);
@@ -45,12 +45,12 @@
     }
 </script>
 <style>
-    .Article {
+    .articleAndReply {
         margin-top: 70px;
         padding:20px;
         word-break: break-all;
     }
-    .Article img{
+    .articleAndReply img{
         width:100%;
     }
     pre {
