@@ -1,7 +1,7 @@
 <template>
     <div class="side">
         <ul class="title-container">
-            <li class="title-main" v-for="title in titleList" @click='handleClick(title.recent_topics,title.loginname)'>
+            <li class="title-main" v-for="title in titleList" :key="title.loginname" @click='handleClick(title.recent_topics,title.loginname)'>
                 <span>{{title.loginname}}</span>
                 <img :src="title.avatar_url" />
             </li>

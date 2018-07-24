@@ -97,13 +97,13 @@
         white-space: nowrap;
         overflow:-webkit-marquee;
         overflow:marquee;
-        marquee-style:scroll;
+        /* marquee-style:scroll;
         marquee-repetition:infinite;
         marquee-direction:left;
         marquee-speed:slow; 
         -webkit-marquee-style:scroll;
         -webkit-marquee-repetition:infinite;
         -webkit-marquee-direction:left;
-        -webkit-marquee-speed:slow; 
+        -webkit-marquee-speed:slow;  */
     }
 </style>

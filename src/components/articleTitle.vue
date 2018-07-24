@@ -1,7 +1,7 @@
 <template>
     <div class="side">
         <ul class="title-container">
-            <li class="title-main" v-for="title in titleList" @click='handleClick(title.id,title.title)'>
+            <li class="title-main" v-for="title in titleList" :key="title.title" @click='handleClick(title.id,title.title)'>
                 <span>{{title.title}}</span>
             </li>
         </ul>

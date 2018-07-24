@@ -8,14 +8,26 @@ import article from '../page/article.vue'
 Vue.use(Router)
 
 export default new Router({
-    routes: [{
+  routes: [{
+    path: '/',
+    component: index,
+    name: 'index',
+    children: [
+      {
+        path: 'detail',
+        component: detail,
+        name: 'detail'
+      },
+      {
         path: '/',
-        component: index,
-        name: 'index',
-        children: [
-          { path: 'detail', component: detail, name: 'detail' },
-          { path: '/', component: home, name: 'home' },
-          { path: 'article', component: article, name: 'article' }
-        ]
-    }]
+        component: home,
+        name: 'home'
+      },
+      {
+        path: 'article',
+        component: article,
+        name: 'article'
+      }
+    ]
+  }]
 })
