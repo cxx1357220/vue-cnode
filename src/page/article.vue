@@ -2,7 +2,7 @@
     <div class="articleAndReply">
         <div>{{articleTitle}}</div>
         <div v-html="article"></div>
-        <div style='background-color:#099999'>回复：</div>
+        <div v-if="replies.length>0" style='background-color:#099999'>回复：</div>
         <div class="bor" v-for="title in replies" :key="title.id">
             <p class='author'>用户：{{title.author.loginname}}</p>
             <span v-html="title.content"></span>
