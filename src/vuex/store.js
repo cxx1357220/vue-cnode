@@ -5,8 +5,8 @@ Vue.use(Vuex)
 // 创建基本状态
 const state = {
   titleList: '',
-  articleTitle: '',
-  headerTitle: '作者列表',
+  articleTitle: JSON.parse(localStorage.getItem('articleTitle'))||'',
+  headerTitle: localStorage.getItem('headerTitle')||'作者列表',
   arrId: ['JacksonTian', 'imzengyang', 'JZLeung', 'vanishcode', 'chuanzai', 'huanz', 'zhangshiqiu', 'i5ting', 'Hyurl', 'D8Ge', 'spursy', 'wangchaoduo', 'JerrysShan', 'FrankDiao', 'heguangda', 'ITCNZ', 'yuu2lee4'],
 }
 // 创建改变状态的方法
@@ -17,10 +17,12 @@ const mutations = {
     }
   },
   changeArticleTitle (state, n) {
-    state.articleTitle = n
+    state.articleTitle = n;
+    localStorage.setItem('articleTitle',JSON.stringify(n))
   },
   changeHeaderTitle (state, n) {
-    Vue.set(state, 'headerTitle', n)
+    Vue.set(state, 'headerTitle', n);
+    localStorage.setItem('headerTitle',n)
   }
 }
 // 创建驱动actions可以使得mutations得以启动

@@ -19,7 +19,7 @@
                 titleList: store.state.titleList,
             }
         },
-        created() {
+        mounted() {
             this.getAuthorAll()
         },
         methods: {

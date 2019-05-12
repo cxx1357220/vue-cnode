@@ -21,7 +21,7 @@ export default {
     }
   },
   components: {},
-  created() {
+  mounted() {
     this.getArticle(this.$route.query.id)
   },
   methods: {
